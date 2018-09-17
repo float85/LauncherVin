@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="video"
+            type="com.launcher.vin_group.view.screen.video_download.Video_ViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/ivFileType"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:tint="@color/gray"
+            app:srcCompat="@drawable/ic_video"
+            app:visible="@{video.showIconVideo}" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:tint="@color/gray"
+            app:srcCompat="@drawable/ic_photo"
+            app:visible="@{video.showIconImage}"
+            tools:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivFileType"
+            android:layout_marginLeft="16dp"
+            android:text="@{video.format}"
+            android:textSize="12sp"
+            tools:text="mp4" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/ivFileType"
+            android:text="@{video.name}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="File name" />
+
+        <TextView
+            android:id="@+id/tvPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/tvFileName"
+            android:text="@{video.textPercent}"
+            android:textColor="@color/gray_2"
+            android:textSize="14sp"
+            app:show="@{video.progress > 0}"
+            tools:text="- 20%" />
+
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvFileName"
+            android:layout_below="@+id/tvFileName"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="@{video.progress}"
+            app:show="@{video.progress &lt; 100 &amp;&amp; !video.showError }"
+            tools:progress="22"
+            tools:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvFileName"
+            android:layout_below="@+id/tvFileName"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            app:show="@{video.showError}"
+            tools:text="Tải thất bại. Bấm để tải lại"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:tint="@color/green"
+            app:show="@{video.progress == 100}"
+            app:srcCompat="@drawable/ic_done" />
+
+    </RelativeLayout>
+</layout>

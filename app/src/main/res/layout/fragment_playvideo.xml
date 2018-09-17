@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data></data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:src="@mipmap/waiting_cover" />
+
+        <View
+            android:id="@+id/bgBlack"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvPlay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp" />
+
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/content"
+                android:layout_alignTop="@+id/content"
+                android:alpha="0.6"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCurrentPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    tools:text="Playing ID: 23, Sort: 1 \nNext ID: 24, Sort 6" />
+
+                <TextView
+                    android:id="@+id/tvPlayList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@color/green"
+                    android:textSize="20sp"
+                    tools:text="24, 22, 18, 3" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>

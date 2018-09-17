@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/etFake"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusDown="@+id/vDownload"
+            android:nextFocusLeft="@+id/vSetting"
+            android:nextFocusRight="@+id/vDownload"
+            android:nextFocusUp="@+id/vDownload" />
+
+        <LinearLayout
+            android:id="@+id/vControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/vDownload"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_focus"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/vSetting"
+                    android:nextFocusLeft="@+id/vReset"
+                    android:nextFocusRight="@+id/vFolder"
+                    android:nextFocusUp="@+id/tvClose">
+
+                    <ImageView
+                        android:id="@+id/ivUpdate"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/ic_system_update_black_48dp"
+                        android:tint="@color/gray_3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivUpdate"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/update_version"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/vFolder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_focus"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/vReset"
+                    android:nextFocusLeft="@+id/vDownload"
+                    android:nextFocusRight="@+id/vSetting"
+                    android:nextFocusUp="@+id/tvClose">
+
+                    <ImageView
+                        android:id="@+id/ivFolder"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/ic_usb_black_48dp"
+                        android:tint="@color/gray_3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivFolder"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/open_folder"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/vSetting"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_focus"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/tvClose"
+                    android:nextFocusLeft="@+id/vFolder"
+                    android:nextFocusRight="@+id/vReset"
+                    android:nextFocusUp="@+id/vDownload">
+
+                    <ImageView
+                        android:id="@+id/ivSetting"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/ic_settings_black_48dp"
+                        android:tint="@color/gray_3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivSetting"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/open_setting"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/vReset"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_focus"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/tvClose"
+                    android:nextFocusLeft="@+id/vSetting"
+                    android:nextFocusRight="@+id/tvClose"
+                    android:nextFocusUp="@+id/vFolder">
+
+                    <ImageView
+                        android:id="@+id/ivReset"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/ic_reset"
+                        android:tint="@color/gray_3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivReset"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/reset_action"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/tvClose"
+            android:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/tvClose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vControl"
+            android:background="@drawable/button_focus"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:nextFocusDown="@+id/vDownload"
+            android:nextFocusLeft="@+id/vSetting"
+            android:nextFocusRight="@+id/vReset"
+            android:nextFocusUp="@+id/vDownload"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="@string/close"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.launcher.vin_group.view.screen.video_download.VideoDownload_ViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_loading">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:itemBinding="@{viewModel.itemBind}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_download" />
+
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Download"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_loading" />
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            app:show="@{viewModel.isLoading}" />
+
+        <ImageView
+            android:id="@+id/ivLoading"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivLoading"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.textStatus}"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:text="@{viewModel.textVersion}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="Version Code: 2" />
+
+    </RelativeLayout>
+</layout>

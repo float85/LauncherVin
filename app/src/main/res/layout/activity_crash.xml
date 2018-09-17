@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivBug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/customactivityoncrash_error_image" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivBug"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Có sự cố xảy ra"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tvMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMessage"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/crash_message"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnRestartApp"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_below="@+id/tvMessage2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:focusable="true"
+            android:paddingBottom="26dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="26dp"
+            android:text="Restart"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/btnErrorDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnRestartApp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/error_details"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</layout>

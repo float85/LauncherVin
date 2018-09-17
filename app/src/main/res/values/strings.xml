@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Launcher VinGroup</string>
+    <string name="update_version_app">Cập nhật</string>
+    <string name="update_message">Có bản cập nhật LAUNCHER mới.\n Vui lòng bấm nút CẬP NHẬT</string>
+    <string name="crash_message">Vui lòng bấm RESTART để chạy lại ứng dụng.\n Nếu sự cố tiếp tục xảy ra, vui lòng liên hệ bộ phận kỹ thuật để được trợ giúp.</string>
+    <string name="error_details">Chi tiết lỗi</string>
+    <string name="loading_data">Đang tải dữ liệu ...</string>
+    <string name="update_version">Cập nhật\nphiên bản</string>
+    <string name="open_folder">Mở thư mục</string>
+    <string name="open_setting">Cài đặt</string>
+    <string name="close">Đóng</string>
+    <string name="reset_action">Khôi phục\ncài đặt gốc</string>
+</resources>
